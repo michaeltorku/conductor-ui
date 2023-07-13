@@ -92,20 +92,24 @@ export function XAxis({
         x2={canvasWidth}
         y2={canvasHeight}
       />
-      {!xTicks.find(tick => tick.getTime() === minTick.getTime()) && <line
-        className={classes.dottedLine}
-        x1={0}
-        y1={0}
-        x2={0}
-        y2={canvasHeight}
-      />}
-      {!xTicks.find(tick => tick.getTime() === maxTick.getTime()) && <line
-        className={classes.dottedLine}
-        x1={canvasWidth}
-        y1={0}
-        x2={canvasWidth}
-        y2={canvasHeight}
-      />}
+      {!xTicks.find((tick) => tick.getTime() === minTick.getTime()) && (
+        <line
+          className={classes.dottedLine}
+          x1={0}
+          y1={0}
+          x2={0}
+          y2={canvasHeight}
+        />
+      )}
+      {!xTicks.find((tick) => tick.getTime() === maxTick.getTime()) && (
+        <line
+          className={classes.dottedLine}
+          x1={canvasWidth}
+          y1={0}
+          x2={canvasWidth}
+          y2={canvasHeight}
+        />
+      )}
     </g>
   );
 }
